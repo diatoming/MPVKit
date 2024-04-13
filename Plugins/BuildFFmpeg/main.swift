@@ -852,7 +852,7 @@ private class BuildFFMPEG: BaseBuild {
         "--disable-armv5te", "--disable-armv6", "--disable-armv6t2",
         "--disable-bzlib", "--disable-gray", "--disable-iconv", "--disable-linux-perf",
         "--disable-shared", "--disable-small", "--disable-swscale-alpha", "--disable-symver", "--disable-xlib",
-        "--enable-cross-compile", "--enable-gpl", "--enable-libxml2", "--enable-nonfree",
+        "--enable-cross-compile", "--enable-libxml2",
         "--enable-optimizations", "--enable-pic", "--enable-runtime-cpudetect", "--enable-static", "--enable-thumb", "--enable-version3",
         "--pkg-config-flags=--static",
         // Documentation options:
@@ -1802,6 +1802,7 @@ private class BuildMPV: BaseBuild {
 
     override func arguments(platform: PlatformType, arch: ArchType) -> [String] {
         var array = [
+            "-Dgpl=false",
             "-Dlibmpv=true",
             "-Dgl=enabled",
             "-Dplain-gl=enabled",
