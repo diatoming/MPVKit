@@ -890,6 +890,7 @@ private class BuildFFMPEG: BaseBuild {
     }
 
     private let ffmpegConfiguers = [
+        "--disable-securetransport",
         // Configuration options:
         "--disable-armv5te", "--disable-armv6", "--disable-armv6t2",
         "--disable-bzlib", "--disable-gray", "--disable-iconv", "--disable-linux-perf",
