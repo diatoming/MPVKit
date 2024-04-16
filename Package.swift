@@ -54,7 +54,7 @@ let package = Package(
                 "Libavcodec", "Libavfilter", "Libavformat", "Libavutil", "Libswresample", "Libswscale",
                 "Libssl", "Libcrypto", "Libass", "Libfreetype", "Libfribidi", "Libharfbuzz",
                 "MoltenVK", "Libshaderc_combined", "lcms2", "Libplacebo", "Libfontconfig", "Libdovi", "Libunibreak",
-                "libsmbclient", "gmp", "nettle", "hogweed", "gnutls",
+                "gmp", "nettle", "hogweed", "gnutls",
                 .target(name: "Libdav1d", condition: .when(platforms: [.macOS, .iOS, .tvOS])),
 //                "Libsrt",
             ],
@@ -198,10 +198,6 @@ let package = Package(
         .binaryTarget(
             name: "gnutls",
             path: "Sources/gnutls.xcframework"
-        ),
-        .binaryTarget(
-            name: "libsmbclient",
-            path: "Sources/Libsmbclient.xcframework"
         ),
 //        .binaryTarget(
 //            name: "Libsrt",
