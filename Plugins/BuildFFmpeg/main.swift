@@ -2095,8 +2095,8 @@ private enum PlatformType: String, CaseIterable {
         case .macos:
             return "14.0"
         case .maccatalyst:
-            // return "14.0"
-            return ""
+            return "14.0"
+            // return ""
         }
     }
 
