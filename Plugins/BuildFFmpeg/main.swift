@@ -2093,10 +2093,10 @@ private enum PlatformType: String, CaseIterable {
         case .tvos, .tvsimulator:
             return "17.0"
         case .macos:
-            return "14.0"
+            return "11.0"
         case .maccatalyst:
-            return "14.0"
-            // return ""
+            // return "14.0"
+            return ""
         }
     }
 
