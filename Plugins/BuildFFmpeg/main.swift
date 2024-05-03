@@ -16,7 +16,7 @@ private enum Library: String, CaseIterable {
         case .FFmpeg:
             return "n6.1.1"
         case .libfontconfig:
-            return "2.14.2"
+            return "2.15.0"
         case .libunibreak:
             return "libunibreak_5_1"
         case .libfreetype:
