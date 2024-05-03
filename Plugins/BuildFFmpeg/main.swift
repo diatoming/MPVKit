@@ -425,7 +425,9 @@ private class BaseBuild {
         let libNames = try self.frameworks()
         for libName in libNames {
             if libName.hasPrefix("lib") {
-                frameworks.append("Lib" + libName.dropFirst(3))
+                var name = "Lib" + libName.dropFirst(3)
+                name = name.replacingOccurrences(of: "_", with: "-")
+                frameworks.append(name)
             } else {
                 frameworks.append(libName)
             }
@@ -1736,7 +1738,7 @@ private class BuildShaderc: BaseBuild {
     }
 
     override func frameworks() throws -> [String] {
-        ["libshaderccombined"]
+        ["libshaderc_combined"]
     }
     
 }
