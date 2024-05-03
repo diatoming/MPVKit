@@ -425,8 +425,7 @@ private class BaseBuild {
         let libNames = try self.frameworks()
         for libName in libNames {
             if libName.hasPrefix("lib") {
-                var name = "Lib" + libName.dropFirst(3)
-                name = name.replacingOccurrences(of: "_", with: "-")
+                let name = "Lib" + libName.dropFirst(3)
                 frameworks.append(name)
             } else {
                 frameworks.append(libName)
