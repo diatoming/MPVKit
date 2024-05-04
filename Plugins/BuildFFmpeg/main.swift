@@ -498,7 +498,7 @@ private class BaseBuild {
         }
         """
         FileManager.default.createFile(atPath: frameworkDir.path + "/Modules/module.modulemap", contents: modulemap.data(using: .utf8), attributes: nil)
-        createPlist(path: frameworkDir.path + "/Info.plist", name: framework, minVersion: platform.minVersion, platform: platform.sdk)
+        createPlist(path: frameworkDir.path + "/Info.plist", name: framework.replacingOccurrences(of: "_", with: "-"), minVersion: platform.minVersion, platform: platform.sdk)
         return frameworkDir.path
     }
 
@@ -1737,7 +1737,7 @@ private class BuildShaderc: BaseBuild {
     }
 
     override func frameworks() throws -> [String] {
-        ["libshaderc"]
+        ["libshaderc_combined"]
     }
     
 }
@@ -2094,7 +2094,7 @@ private enum PlatformType: String, CaseIterable {
         case .tvos, .tvsimulator:
             return "17.0"
         case .macos:
-            return "11.0"
+            return "14.0"
         case .maccatalyst:
             // return "14.0"
             return ""
