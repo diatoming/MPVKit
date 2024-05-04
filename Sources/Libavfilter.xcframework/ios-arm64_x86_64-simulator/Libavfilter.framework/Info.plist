@@ -7,7 +7,7 @@
 <key>CFBundleExecutable</key>
 <string>Libavfilter</string>
 <key>CFBundleIdentifier</key>
-<string>com.kintan.ksplayer.Libavfilter</string>
+<string>app.dintof.www.dintplay.Libavfilter</string>
 <key>CFBundleInfoDictionaryVersion</key>
 <string>6.0</string>
 <key>CFBundleName</key>
@@ -21,7 +21,7 @@
 <key>CFBundleSignature</key>
 <string>????</string>
 <key>MinimumOSVersion</key>
-<string>13.0</string>
+<string>17.0</string>
 <key>CFBundleSupportedPlatforms</key>
 <array>
 <string>iPhoneSimulator</string>
