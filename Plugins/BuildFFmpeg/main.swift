@@ -498,7 +498,7 @@ private class BaseBuild {
         }
         """
         FileManager.default.createFile(atPath: frameworkDir.path + "/Modules/module.modulemap", contents: modulemap.data(using: .utf8), attributes: nil)
-        createPlist(path: frameworkDir.path + "/Info.plist", name: framework.replacingOccurrences(of: "_", with: "-"), minVersion: platform.minVersion, platform: platform.sdk)
+        createPlist(path: frameworkDir.path + "/Info.plist", name: framework, minVersion: platform.minVersion, platform: platform.sdk)
         return frameworkDir.path
     }
 
@@ -515,7 +515,10 @@ private class BaseBuild {
     }
 
     private func createPlist(path: String, name: String, minVersion: String, platform: String) {
-        let identifier = "app.dintof.www.dintplay." + name
+        var identifier = "app.dintof.www.dintplay." + name
+        if name.localizedCaseInsensitiveContains("libshaderc_combined") {
+            identifier = identifier.replacingOccurrences(of: "_", with: "-")
+        }
         let content = """
         <?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
