@@ -54,7 +54,6 @@ let package = Package(
                 "Libavcodec", "Libavfilter", "Libavformat", "Libavutil", "Libswresample", "Libswscale",
                 "Libssl", "Libcrypto", "Libass", "Libfreetype", "Libfribidi", "Libharfbuzz",
                 "MoltenVK", "Libshaderc_combined", "lcms2", "Libplacebo", "Libfontconfig", "Libdovi", "Libunibreak",
-                "gmp", "nettle", "hogweed", "gnutls",
                 .target(name: "Libdav1d", condition: .when(platforms: [.macOS, .iOS, .tvOS])),
 //                "Libsrt",
             ],
@@ -182,22 +181,6 @@ let package = Package(
         .binaryTarget(
             name: "Libluajit",
             path: "Sources/Libluajit.xcframework"
-        ),
-        .binaryTarget(
-            name: "gmp",
-            path: "Sources/gmp.xcframework"
-        ),
-        .binaryTarget(
-            name: "nettle",
-            path: "Sources/nettle.xcframework"
-        ),
-        .binaryTarget(
-            name: "hogweed",
-            path: "Sources/hogweed.xcframework"
-        ),
-        .binaryTarget(
-            name: "gnutls",
-            path: "Sources/gnutls.xcframework"
         ),
 //        .binaryTarget(
 //            name: "Libsrt",
